@@ -33,6 +33,7 @@ git clone https://github.com/Muzita333/pixel-color-picker.git
 cd pixel-color-picker
 # Serve with any static server, e.g.:
 python -m http.server 8000
+```
 
 Then visit http://localhost:8000
 
