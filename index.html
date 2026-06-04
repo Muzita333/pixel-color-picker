@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智能取色器 - 像素级取色工具</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 图片取色器</h1>
+        <p class="subtitle">上传图片，鼠标移动预览颜色，单击锁定并收集，支持缩放拖拽</p>
+
+        <div class="upload-area" id="uploadArea">
+            <input type="file" id="imageUpload" accept="image/*" hidden>
+            <div class="upload-content">
+                <span class="icon">📸</span>
+                <p>点击或拖拽图片到此区域</p>
+                <small>支持 JPG, PNG, GIF, WebP</small>
+            </div>
+        </div>
+
+        <div class="preview-area" id="previewArea" style="display: none;">
+            <canvas id="previewCanvas" style="width: 100%; height: auto; cursor: crosshair; border-radius: 16px;"></canvas>
+            <!-- 控件垂直居中：开关在上，按钮在下 -->
+            <div style="display: flex; flex-direction: column; align-items: center; margin-top: 12px;">
+                <label style="cursor: pointer; user-select: none; background: #f1f5f9; padding: 6px 12px; border-radius: 20px; font-size: 0.9rem; margin-bottom: 12px;">
+                    <input type="checkbox" id="pixelGridToggle" style="margin-right: 6px;"> 显示像素网格
+                </label>
+                <button class="clear-btn" id="clearBtn">重新上传</button>
+            </div>
+        </div>
+
+        <div class="result-area" id="resultArea" style="display: none;">
+            <h2>🎯 当前颜色</h2>
+            <div class="color-palette" id="colorPalette"></div>
+            <!-- 收集板会动态添加在此处下方 -->
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
